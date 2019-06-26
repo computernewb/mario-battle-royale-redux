@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Title</name>
+    <events>
+        <variable comment="The scroll speed of the title screen background." constant="0" name="ScrollSpeed" sid="123695167561723" static="0" type="number">30</variable>
+        <comment>Make background scroll</comment>
+        <event-block sid="539315815710751">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="815538315400402" type="System" />
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="574762127352642" type="TitleScreenBackground">
+                    <param id="0" name="X">TitleScreenBackground.X - (dt*ScrollSpeed)</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Reset background</comment>
+        <event-block sid="988745605548096">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="140635906150588" type="TitleScreenBackground">
+                    <param id="0" name="Comparison">3</param>
+                    <param id="1" name="X co-ordinate">-1100</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="924889021096654" type="TitleScreenBackground">
+                    <param id="0" name="X">1790</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Temporary connect button</comment>
+        <event-block sid="390301917173874">
+            <conditions>
+                <condition id="0" name="On clicked" sid="684343826028529" type="Button" />
+            </conditions>
+            <actions>
+                <action id="10" name="Connect" sid="728890278887953" type="Photon" />
+            </actions>
+        </event-block>
+        <event-group description="" sid="305151532320529" title="Photon stuff">
+            <sub-events>
+                <event-block sid="755411733163930">
+                    <conditions>
+                        <condition id="22" name="On join lobby" sid="487718172007508" type="Photon" />
+                    </conditions>
+                    <actions>
+                        <action id="13" name="Join random room" sid="269254008954298" type="Photon">
+                            <param id="0" name="MatchMyRoom">0</param>
+                            <param id="1" name="MatchmakingMode">0</param>
+                            <param id="2" name="LobbyName">&quot;&quot;</param>
+                            <param id="3" name="LobbyType">0</param>
+                            <param id="4" name="SqlLobbyFilter">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="871519019060348">
+                    <conditions>
+                        <condition id="23" name="On joinRandomRoom no match found" sid="161899262687130" type="Photon" />
+                    </conditions>
+                    <actions>
+                        <action id="11" name="Create room" sid="217550865892124" type="Photon">
+                            <param id="0" name="Room">&quot;test&quot;</param>
+                            <param id="1" name="LobbyName">&quot;&quot;</param>
+                            <param id="2" name="LobbyType">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="222200685893813">
+                    <conditions>
+                        <condition id="14" name="On join room" sid="755727150077420" type="Photon" />
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="467397637394610" type="System">
+                            <param id="0" name="Layout">Lobby</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
