@@ -1,5 +1,5 @@
 # Mario Battle Royale Redux
-This is currently an incomplete clone of the game "Mario Battle Royale" created by Infernobro. This game uses Photon and Construct 2.
+This is currently an incomplete clone of the game "Mario Battle Royale" created by Infernoplus. This game uses Photon and Construct 2.
 
 Note: This is currently extremely incomplete and is not even in a pre-alpha stage yet, so don't expect anything. All there is so far is very basic multiplayer functionality.
 
